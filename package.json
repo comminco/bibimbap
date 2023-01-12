@@ -1,23 +1,32 @@
 {
   "name": "bibimbap",
   "version": "0.1.7",
+  "type": "module",
+  "license": "MIT",
+  "author": "Commin",
+  "bin": "index.js",
+  "files": [
+    "index.js",
+    "template",
+    "dist"
+  ],
   "description": "I put packages i liked and bibim it.",
   "main": "index.js",
-  "bin": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "unbuild",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/comminco/bibimbap.git"
   },
-  "keywords": [
-    "commin"
-  ],
-  "author": "commin",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/comminco/bibimbap/issues"
   },
-  "homepage": "https://github.com/comminco/bibimbap#readme"
+  "homepage": "https://github.com/comminco/bibimbap#readme",
+  "devDependencies": {
+    "kolorist": "^1.6.0",
+    "minimist": "^1.2.7",
+    "prompts": "^2.4.2"
+  }
 }
