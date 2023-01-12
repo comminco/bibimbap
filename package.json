@@ -1,30 +1,23 @@
 {
   "name": "bibimbap",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "0.1.6",
+  "description": "I put packages i liked and bibim it.",
+  "main": "index.js",
+  "bin": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "localforage": "^1.10.0",
-    "match-sorter": "^6.3.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.6.0",
-    "recoil": "^0.7.6",
-    "sort-by": "^1.2.0",
-    "styled-components": "^5.3.6"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comminco/bibimbap.git"
   },
-  "devDependencies": {
-    "@types/react": "^18.0.26",
-    "@types/react-dom": "^18.0.9",
-    "@types/styled-components": "^5.1.26",
-    "@vitejs/plugin-react-swc": "^3.0.0",
-    "prettier": "2.8.2",
-    "typescript": "^4.9.3",
-    "vite": "^4.0.0"
-  }
+  "keywords": [
+    "commin"
+  ],
+  "author": "commin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/comminco/bibimbap/issues"
+  },
+  "homepage": "https://github.com/comminco/bibimbap#readme"
 }
