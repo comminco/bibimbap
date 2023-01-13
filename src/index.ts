@@ -148,7 +148,7 @@ async function init() {
       console.log(`  ${pkgManager} run dev`);
       break;
   }
-  console.log();
+  console.log("i love you. -commin");
 }
 
 function formatTargetDir(targetDir: string | undefined) {
