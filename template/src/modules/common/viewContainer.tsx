@@ -19,7 +19,7 @@ const Container = styled.main`
   font-size: var(--text-M);
   max-width: var(--max-width);
   height: 100%;
-  width: 80%;
+  width: 100%;
 `
 
 const Wrap = styled.div`

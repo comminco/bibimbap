@@ -10,17 +10,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import minimist from "minimist";
 import prompts from "prompts";
-import {
-  blue,
-  cyan,
-  green,
-  lightGreen,
-  lightRed,
-  magenta,
-  red,
-  reset,
-  yellow,
-} from "kolorist";
+import { red, reset } from "kolorist";
 
 // Avoids autoconversion to number of the project name by defining that the args
 // non associated with an option ( _ ) needs to be parsed as a string. See #4606
@@ -30,170 +20,6 @@ const argv = minimist<{
 }>(process.argv.slice(2), { string: ["_"] });
 const cwd = process.cwd();
 
-type ColorFunc = (str: string | number) => string;
-type Framework = {
-  name: string;
-  display: string;
-  color: ColorFunc;
-  variants: FrameworkVariant[];
-};
-type FrameworkVariant = {
-  name: string;
-  display: string;
-  color: ColorFunc;
-  customCommand?: string;
-};
-
-// const FRAMEWORKS: Framework[] = [
-//   {
-//     name: "vanilla",
-//     display: "Vanilla",
-//     color: yellow,
-//     variants: [
-//       {
-//         name: "vanilla",
-//         display: "JavaScript",
-//         color: yellow,
-//       },
-//       {
-//         name: "vanilla-ts",
-//         display: "TypeScript",
-//         color: blue,
-//       },
-//     ],
-//   },
-//   {
-//     name: "vue",
-//     display: "Vue",
-//     color: green,
-//     variants: [
-//       {
-//         name: "vue",
-//         display: "JavaScript",
-//         color: yellow,
-//       },
-//       {
-//         name: "vue-ts",
-//         display: "TypeScript",
-//         color: blue,
-//       },
-//       {
-//         name: "custom-create-vue",
-//         display: "Customize with create-vue ↗",
-//         color: green,
-//         customCommand: "npm create vue@latest TARGET_DIR",
-//       },
-//       {
-//         name: "custom-nuxt",
-//         display: "Nuxt ↗",
-//         color: lightGreen,
-//         customCommand: "npm exec nuxi init TARGET_DIR",
-//       },
-//     ],
-//   },
-//   {
-//     name: "react",
-//     display: "React",
-//     color: cyan,
-//     variants: [
-//       {
-//         name: "react",
-//         display: "JavaScript",
-//         color: yellow,
-//       },
-//       {
-//         name: "react-ts",
-//         display: "TypeScript",
-//         color: blue,
-//       },
-//       {
-//         name: "react-swc",
-//         display: "JavaScript + SWC",
-//         color: yellow,
-//       },
-//       {
-//         name: "react-swc-ts",
-//         display: "TypeScript + SWC",
-//         color: blue,
-//       },
-//     ],
-//   },
-//   {
-//     name: "preact",
-//     display: "Preact",
-//     color: magenta,
-//     variants: [
-//       {
-//         name: "preact",
-//         display: "JavaScript",
-//         color: yellow,
-//       },
-//       {
-//         name: "preact-ts",
-//         display: "TypeScript",
-//         color: blue,
-//       },
-//     ],
-//   },
-//   {
-//     name: "lit",
-//     display: "Lit",
-//     color: lightRed,
-//     variants: [
-//       {
-//         name: "lit",
-//         display: "JavaScript",
-//         color: yellow,
-//       },
-//       {
-//         name: "lit-ts",
-//         display: "TypeScript",
-//         color: blue,
-//       },
-//     ],
-//   },
-//   {
-//     name: "svelte",
-//     display: "Svelte",
-//     color: red,
-//     variants: [
-//       {
-//         name: "svelte",
-//         display: "JavaScript",
-//         color: yellow,
-//       },
-//       {
-//         name: "svelte-ts",
-//         display: "TypeScript",
-//         color: blue,
-//       },
-//       {
-//         name: "custom-svelte-kit",
-//         display: "SvelteKit ↗",
-//         color: red,
-//         customCommand: "npm create svelte@latest TARGET_DIR",
-//       },
-//     ],
-//   },
-//   {
-//     name: "others",
-//     display: "Others",
-//     color: reset,
-//     variants: [
-//       {
-//         name: "create-vite-extra",
-//         display: "create-vite-extra ↗",
-//         color: reset,
-//         customCommand: "npm create vite-extra@latest TARGET_DIR",
-//       },
-//     ],
-//   },
-// ];
-
-// const TEMPLATES = FRAMEWORKS.map(
-//   (f) => (f.variants && f.variants.map((v) => v.name)) || [f.name]
-// ).reduce((a, b) => a.concat(b), []);
-
 const renameFiles: Record<string, string | undefined> = {
   _gitignore: ".gitignore",
 };
@@ -202,7 +28,6 @@ const defaultTargetDir = "bibimbap-project";
 
 async function init() {
   const argTargetDir = formatTargetDir(argv._[0]);
-  const argTemplate = argv.template || argv.t;
 
   let targetDir = argTargetDir || defaultTargetDir;
   const getProjectName = () =>
