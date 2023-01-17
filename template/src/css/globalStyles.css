@@ -39,3 +39,20 @@ body {
   --border-M: 1.5px solid black;
   --border-L: 2px solid black;
 }
+
+
+/* media */
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+/**
+* mobile Responsive
+*/
+@media screen and (max-width: 480px) {
+  :root {
+    font-size: 12px;
+  }
+}
