@@ -13,13 +13,13 @@ Now you don't have to install packages one by one or create folders.
 With NPM (7.24+):
 
 ```bash
-$ npm exec bibimbap
+$ npm exec bibimbap@latest
 ```
 
 With NPX:
 
 ```bash
-$ npx bibimbap
+$ npx bibimbap@latest
 ```
 
 </br>
