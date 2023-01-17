@@ -1,31 +1,41 @@
+/** 
+* font template
+@font-face {
+  font-family: '';
+  src: url('../assets/font/.ttf') format('truetype');
+} 
+*/
 
-html,
+
+html {
+  background-color: var(--key-color-100);
+  font: 100%/1.75;
+}
+
 body {
+  overflow: hidden;
   margin: 0;
-  height: 100%;
-  width: 100%;
-  font-size: 16px;
+  word-wrap: break-word;
+  color: hsla(0, 0%, 0%, 0.9);
 }
 
-@media screen and (max-width: 480px) {
-  html,
-  body {
-    font-size: 12px;
-  }
-}
+:root {
+  --key-color-rgb: 74, 111, 132;
 
-#root {
-  height: 100%;
-  width: 100%;
-
-  --key-color: #4a6f84; /* rgba(74,111,132,1)*/
-  --key-color-100: #4a6f8408; /* rgba(74,111,132, 0.1)*/
-  --key-color-200: #4a6f8433; /* rgba(74,111,132, 0.2)*/
+  --key-color: rgba(var(--key-color-rgb));
+  --key-color-100: rgba(var(--key-color-rgb), 0.1);
+  --key-color-200: rgba(var(--key-color-rgb), 0.2);
+  --key-color-300: rgba(var(--key-color-rgb), 0.3);
+  --key-color-400: rgba(var(--key-color-rgb), 0.4);
+  --key-color-500: rgba(var(--key-color-rgb), 0.5);
 
   --text-M: 0.875rem;
   --text-L: 1.5rem;
-  --text-XL: 2rem;
+  --text-XL: 3rem;
 
   --width-M: 2rem;
   --width-L: 4rem;
+
+  --border-M: 1.5px solid black;
+  --border-L: 2px solid black;
 }

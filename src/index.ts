@@ -41,7 +41,7 @@ async function init() {
         {
           type: argTargetDir ? null : "text",
           name: "projectName",
-          message: reset("Project name:"),
+          message: reset("✨ Project name:"),
           initial: defaultTargetDir,
           onState: (state) => {
             targetDir = formatTargetDir(state.value) || defaultTargetDir;
@@ -52,10 +52,12 @@ async function init() {
             !fs.existsSync(targetDir) || isEmpty(targetDir) ? null : "confirm",
           name: "overwrite",
           message: () =>
-            (targetDir === "."
-              ? "Current directory"
-              : `Target directory "${targetDir}"`) +
-            ` is not empty. Remove existing files and continue?`,
+            targetDir === "."
+              ? reset("🧐 Current directory")
+              : reset(
+                  `🧐 Target directory "${targetDir}" is not empty.
+                   \n Remove existing files and continue?`
+                ),
         },
         {
           type: (_, { overwrite }: { overwrite?: boolean }) => {
@@ -102,7 +104,7 @@ async function init() {
   const pkgInfo = pkgFromUserAgent(process.env.npm_config_user_agent);
   const pkgManager = pkgInfo ? pkgInfo.name : "npm";
 
-  console.log(`\nScaffolding project in ${root}...`);
+  console.log(`\n🚧 Creating project in ${root}...`);
 
   const templateDir = path.resolve(
     fileURLToPath(import.meta.url),
@@ -132,7 +134,7 @@ async function init() {
 
   write("package.json", JSON.stringify(pkg, null, 2));
 
-  console.log(`\nDone. Now run:\n`);
+  console.log(`\n✨ Finish! Now run:\n`);
 
   if (root !== cwd) {
     console.log(`  cd ${path.relative(cwd, root)}`);
@@ -148,7 +150,7 @@ async function init() {
       console.log(`  ${pkgManager} run dev`);
       break;
   }
-  console.log("\ni love you. -commin\n");
+  console.log("\n🫶 i love you. -commin\n");
 }
 
 function formatTargetDir(targetDir: string | undefined) {
