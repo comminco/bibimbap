@@ -1,12 +1,12 @@
 @font-face {
   font-family: 'QuattroSans';
-  src: url('../resources/fonts/QuattrocentoSans-Regular.ttf') format('truetype');
+  src: url('../assets/fonts/QuattrocentoSans-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'QuattroSans';
   font-weight: 700;
-  src: url('../resources/fonts/QuattrocentoSans-Bold.ttf') format('truetype');
+  src: url('../assets/fonts/QuattrocentoSans-Bold.ttf') format('truetype');
 }
 
 html,
