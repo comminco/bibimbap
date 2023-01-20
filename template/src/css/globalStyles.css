@@ -1,24 +1,21 @@
-
 @font-face {
-  font-family: "QuattroSans";
-  src: url("../resources/fonts/QuattrocentoSans-Regular.ttf") format("truetype");
+  font-family: 'QuattroSans';
+  src: url('../resources/fonts/QuattrocentoSans-Regular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "QuattroSans";
+  font-family: 'QuattroSans';
   font-weight: 700;
-  src: url("../resources/fonts/QuattrocentoSans-Bold.ttf") format("truetype");
+  src: url('../resources/fonts/QuattrocentoSans-Bold.ttf') format('truetype');
 }
-
 
 html,
 body,
-#root {
+#_bibimbap {
   height: 100%;
   padding: 0;
   margin: 0;
 }
-
 
 html {
   background-color: var(--key-color-100);
@@ -28,6 +25,10 @@ html {
 body {
   word-wrap: break-word;
   color: hsla(0, 0%, 0%, 0.9);
+}
+
+#_bibimbap {
+  opacity: 0;
 }
 
 :root {
@@ -51,8 +52,9 @@ body {
   --border-L: 2px solid black;
 }
 
-
-/* media */
+/**
+* media 
+*/
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
@@ -65,5 +67,27 @@ body {
 @media screen and (max-width: 480px) {
   :root {
     font-size: 12px;
+  }
+}
+
+/** 
+* keyframes
+*/
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

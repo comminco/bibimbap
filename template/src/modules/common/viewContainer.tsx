@@ -16,14 +16,14 @@ function ViewContainer({ children }: ViewContainerProps) {
 const Container = styled.main`
   margin: auto;
   background: var(--main-bg-color);
-  font-size: var(--text-M);
   max-width: var(--max-width);
   height: 100%;
   width: 100%;
 `
 
-const Wrap = styled.div`
+const Wrap = styled.section`
   height: 100%;
+  padding: 0 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
