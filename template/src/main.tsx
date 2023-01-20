@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import App from "./App";
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById("_bibimbap") as HTMLElement).render(
   <RecoilRoot>
     <Router>
       <App />
