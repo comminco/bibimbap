@@ -14,9 +14,9 @@ function ViewContainer({ children }: ViewContainerProps) {
 }
 
 const Container = styled.main`
+
+  background-color: var(--key-color-100);
   margin: auto;
-  background: var(--main-bg-color);
-  max-width: var(--max-width);
   height: 100%;
   width: 100%;
 `
