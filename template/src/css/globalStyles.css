@@ -21,6 +21,14 @@ html {
   font: 100%/1.75 'QuattroSans';
 }
 
+html img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
 body {
   word-wrap: break-word;
   color: hsla(0, 0%, 0%, 0.9);
@@ -40,14 +48,14 @@ body {
   --key-color-400: rgba(var(--key-color-rgb), 0.4);
   --key-color-500: rgba(var(--key-color-rgb), 0.5);
 
-  --text-M: 0.875rem;
-  --text-L: 1.5rem;
-  --text-XL: 3rem;
+  --text-S: 0.75rem
+  --text-L: 1.25rem;
+  --text-XL: 2rem;
 
   --width-M: 2rem;
   --width-L: 4rem;
 
-  --border-M: 1.5px solid black;
+  --border-M: 1px solid black;
   --border-L: 2px solid black;
 }
 
