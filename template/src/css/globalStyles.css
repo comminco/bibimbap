@@ -74,9 +74,7 @@ body {
 * mobile Responsive
 */
 @media screen and (max-width: 480px) {
-  :root {
-    font-size: 12px;
-  }
+
 }
 
 /** 

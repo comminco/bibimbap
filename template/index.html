@@ -36,10 +36,25 @@
     <!-- The role of intro is to keep the client from getting bored until the bundled js file is downloaded. -->
     <style type="text/css">
       #intro-wrap {
-        min-width: 150px;
+        min-width: 185px;
         display: flex;
         justify-content: space-between;
         flex-direction: column;
+      }
+
+      #intro-topside {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      #intro-bottomside {
+        text-align: right;
+      }
+
+      #intro-wrap a {
+        text-decoration: none;
+        color: hsla(0, 0%, 0%, 0.7);
       }
 
       #intro {
@@ -63,11 +78,6 @@
         z-index: 9;
       }
 
-      #intro-topside {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 10px;
-      }
 
       #line {
         border-bottom: 2px solid black;
@@ -88,12 +98,12 @@
   </head>
   <body>
     <div id="intro">
-      <div id="intro-topside-wrap">
+      <div id="intro-wrap">
         <div id="intro-topside">
-          <span>bibambap</span>
+          <a href="https://commin.co" target="_blank">bibimbap</a>
           <span id="line"></span>
         </div>
-        <p id="intro-bottomside">Best template ever</p>
+        <div id="intro-bottomside">fastest Created project </div>
       </div>
     </div>
     <div id="_bibimbap"></div>
