@@ -1,6 +1,5 @@
 import { atom } from 'recoil'
-
-export const country = atom<string>({
-  key: 'country',
-  default: 'korea',
+export const timeZone = atom<string>({
+  key: 'timeZone',
+  default: 'Asia/Seoul',
 })
