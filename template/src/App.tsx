@@ -12,6 +12,10 @@ function App() {
 
   useEffect(() => {
       init()
+
+
+    const { timeZone } = Intl.DateTimeFormat().resolvedOptions()
+    setTimeZone(timeZone)
   }, [])
   
   return (
