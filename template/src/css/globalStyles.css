@@ -9,6 +9,8 @@
   src: url('../assets/fonts/QuattrocentoSans-Bold.ttf') format('truetype');
 }
 
+
+
 html,
 body,
 #_bibimbap {
@@ -38,6 +40,12 @@ body {
 
 #_bibimbap {
   opacity: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 :root {
@@ -100,4 +108,17 @@ body {
   100% {
     opacity: 1;
   }
+}
+
+/** Frequently used */
+.f-c-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.f-b-c {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
